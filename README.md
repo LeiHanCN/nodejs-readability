@@ -1,5 +1,7 @@
 ## for user
 ```sh
+git clone https://github.com/LeiHanCN/nodejs-readability.git
+cd nodejs-readability
 npm run one-step
 ```
 打开浏览器，访问 http://localhost:3333/parseurl?url=https://xxxx
