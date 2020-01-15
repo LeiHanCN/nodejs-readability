@@ -34,9 +34,9 @@ router.get('/', (req, res, next) => {
     let urls = req.query.url.split(',');
     const ret = []
     for (let url of urls) {
-      ret.push(await asyncPrint(url))
+      ret.push({ ...await asyncPrint(url), url })
     }
-    res.send(ret);
+    res.send(ret.map(({ title, url }) => `[${title}](${url})`).join('<br>'));
   }())
 });
 
