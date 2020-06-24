@@ -23,10 +23,15 @@ async function asyncPrint(url) {
     const timezoneList = Object.values(document.querySelectorAll("div.table-responsive > table > tbody > tr > td:nth-child(1)")).map(item => item.textContent);
     const cityList = Object.values(document.querySelectorAll("div.table-responsive > table > tbody > tr > td:nth-child(2)")).map(item => item.textContent)
 
-    ret = cityList.reduce((ret, city, index) => {
+    ret = cityList.reduce((ret, continentCity, index) => {
+      const tz = timezoneList[index]
+      let [district, city] = continentCity.split('/')
+      city = city.replace(/_/g, ' ')
+
       ret.push({
         city,
-        tz: timezoneList[index]
+        district,
+        tz
       })
       return ret
     }, [])
