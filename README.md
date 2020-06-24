@@ -1,19 +1,16 @@
+## world-main-city-timezone
+抓取世界主要城市时区列表
+
 ## for user
 ```sh
-git clone https://github.com/LeiHanCN/nodejs-readability.git
+git clone https://github.com/LeiHanCN/nodejs-readability.git -b world-main-city-timezone
 cd nodejs-readability
+# 一键启动
 npm run one-step
 ```
-打开浏览器，访问 http://localhost:3333/parseurl?url=https://xxxx
-此外，支持多url抓取，用「,」英文逗号隔开，eg: http://localhost:3333/parseurl?url=https://xxxx,https://yyy
+打开浏览器，访问 http://localhost:3333/parseTimezone
 
-## for developer
-```sh
-npm i
-npm run start
-```
-
-## nodejs 网页主体内容抓取
-* 使用phantomjs可以抓取js动态生成的网页，安利 <a target="_blank" href="https://github.com/amir20/phantomjs-node">https://github.com/amir20/phantomjs-node</a>
-* 采用mozilla的主体抓取算法 <a target="_blank" href="https://github.com/mozilla/readability">https://github.com/mozilla/readability</a>
+## 注意 ⚠️
+1. 默认爬取的网址需要在外网环境：https://www.zeitverschiebung.net/cn/all-time-zones.html
+2. 返回的tz参数中，均为UTC
 
